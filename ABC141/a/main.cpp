@@ -11,9 +11,14 @@ int dx[]={1, -1, 0, 0, 0};
 
 int main()
 {
-  double l;
-  cin >> l;
-  printf("%.10f\n", (double)l * l * l / 27);
-  return 0;
+    string s;
+    cin >> s;
+    if (s == "Sunny")
+        cout << "Cloudy";
+    else if (s == "Cloudy")
+        cout << "Rainy";
+    else    
+        cout << "Sunny";
+    cout << endl;
+    return 0;
 }
-
