@@ -11,6 +11,13 @@ int dx[]={1, -1, 0, 0, 0};
 
 int main()
 {
-    
+    int n, d;
+    int ans = 0;
+    cin >> n >> d;
+    if (n % (2 * d + 1) >= 1)
+        ans = n / (2 * d + 1) + 1;
+    else
+        ans = n / (2 * d + 1);
+    cout << ans << endl;
     return 0;
 }

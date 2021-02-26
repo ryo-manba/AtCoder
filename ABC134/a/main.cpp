@@ -11,6 +11,8 @@ int dx[]={1, -1, 0, 0, 0};
 
 int main()
 {
-    
+    int r;
+    cin >> r;
+    cout << 3 * (r * r) << endl;
     return 0;
 }
