@@ -11,15 +11,16 @@ int dx[]={1, -1, 0, 0, 0};
 
 int main()
 {
-    int n;
-    cin >> n;
-    ll b[n] = {100010};
-    rep(i, n - 1) cin >> b[i];
-    int ans = b[0] + b[n - 2];
-    rep(i, n - 2)
+    int a, b;
+    cin >> a >> b;
+    rep(i, 21)
     {
-        ans += min(b[i], b[i + 1]);
+        if (1 + (a - 1) * i >= b)
+        {
+            cout << i << endl;
+            return 0;
+        }
     }
-    cout << ans << endl;
     return 0;
 }
+

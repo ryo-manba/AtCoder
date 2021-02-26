@@ -10,16 +10,18 @@ int dy[]={0, 0, 1, -1, 0};
 int dx[]={1, -1, 0, 0, 0};
 
 int main()
-{
-    int n;
-    cin >> n;
-    ll b[n] = {100010};
-    rep(i, n - 1) cin >> b[i];
-    int ans = b[0] + b[n - 2];
-    rep(i, n - 2)
+{  
+    string s, t;
+    int count = 0;
+    cin >> s >> t;
+    rep(i,3)
     {
-        ans += min(b[i], b[i + 1]);
+        if (s[i] == t[i])
+        {
+            count += 1;
+        }
     }
-    cout << ans << endl;
+    cout << count << endl;
     return 0;
 }
+
