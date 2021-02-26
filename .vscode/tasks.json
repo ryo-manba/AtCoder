@@ -39,7 +39,10 @@
                 "${fileDirname}/${fileBasenameNoExtension}",
                 "--debug"
             ],
-            "group": "build"
+            "group": "build",
+            "problemMatcher": [
+                "$gcc"
+            ]
         },
         {
             "label": "CheckTestCase",
@@ -48,7 +51,7 @@
             "presentation": {
                 "reveal": "always",
                 "focus": true,
-                "panel": "shared",
+                "panel": "shared"
             }
         },
         {
@@ -58,8 +61,8 @@
             "presentation": {
                 "reveal": "always",
                 "focus": true,
-                "panel": "shared",
+                "panel": "shared"
             }
-        },
+        }
     ]
 }
