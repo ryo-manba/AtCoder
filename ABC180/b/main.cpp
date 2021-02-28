@@ -1,16 +1,37 @@
 #include <bits/stdc++.h>
-#define rep(i,n) for (int i = 0; i < (n); ++i)
 using namespace std;
-using ll = long long;
-using P = pair<int, int>;
-const int INF = (int)1e9;
-const ll INFL = (ll)1e15;
-const int MOD = 1e9 + 7;
-int dy[]={0, 0, 1, -1, 0};
-int dx[]={1, -1, 0, 0, 0};
 
-int main()
+int main() 
 {
-    
-    return 0;
+  cout << fixed << setprecision(15);
+
+  int n;
+  cin >> n;
+  long a[n];
+  for (int i = 0; i < n; i++) {
+    cin >> a[i];
+  }
+  for (int i = 0; i < n; i++) {
+    if (a[i] < 0)
+     a[i] *= -1;
+  }
+  long m = 0;
+  for (int i = 0; i < n; i++) {
+    m += a[i];
+  }
+  cout << m << endl;
+
+  long y = 0;
+  for (int i = 0; i < n; i++) {
+    y += (a[i] * a[i]);
+  }
+  cout << sqrt(y) << endl;
+
+  int max = 0;
+  for (int i = 0; i < n; i++) {
+    if (max < a[i])
+      max = a[i];
+  }
+  cout << max << endl;
+  return (0);
 }
