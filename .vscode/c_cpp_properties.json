@@ -4,11 +4,13 @@
             "name": "Mac",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/usr/local/include/**"
+                "/usr/local/include/**",
+                "~/ac-library/**",
+                "${workspaceFolder}/**"
             ],
             "defines": [],
             "macFrameworkPath": [
-                "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk 1/System/Library/Frameworks"
+               // "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk 1/System/Library/Frameworks"
             ],
             "compilerPath": "/usr/local/bin/g++",
             "cStandard": "gnu17",

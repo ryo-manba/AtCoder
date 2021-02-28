@@ -51,17 +51,17 @@
             "presentation": {
                 "reveal": "always",
                 "focus": true,
-                "panel": "shared"
+                "panel": "shared",
             }
         },
         {
             "label": "SubmitCode",
             "type": "shell",
-            "command": "cd ${fileDirname} && acc submit ${fileBasename} -- -l 4101",
+            "command": "cd ${fileDirname} && acc submit ${fileBasename} -- -l 4003",
             "presentation": {
                 "reveal": "always",
                 "focus": true,
-                "panel": "shared"
+                "panel": "shared",
             }
         }
     ]
