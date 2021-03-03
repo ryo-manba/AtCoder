@@ -11,23 +11,17 @@ int dx[]={1, -1, 0, 0, 0};
 
 int main()
 {
-    int n;
-    cin >> n;
-    vector<pair<int, int>> p;
-    rep(i,n){
-        int a, b;
-        cin >> a >> b;
-        p.push_back(make_pair(a, b));
-    }
-    sort(p.begin(), p.end(), [](auto &left, auto &right) {
-    return left.second < right.second;
-    });
+    string s;
+    ll k;
+    cin >> s >> k;
 
-    for (pair<int, int> t : p)
-    {
-        int x, y;
-        tie(x, y) = t;
-        cout << x << " " << y << endl;
+    rep(i,k) {
+        if (s[i] != '1')
+        {
+            cout << s[i] << endl;
+            return 0;
+        }
     }
+    cout << 1 << endl;
     return 0;
 }
