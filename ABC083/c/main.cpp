@@ -11,6 +11,14 @@ int dx[]={1, -1, 0, 0, 0};
 
 int main()
 {
-    
+    ll x, y;
+    cin >> x >> y;
+    int ans = 0;
+    while (x <= y)
+    {
+        x *= 2;
+        ans++;
+    }
+    cout << ans << endl;
     return 0;
 }

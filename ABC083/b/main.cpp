@@ -3,14 +3,29 @@
 using namespace std;
 using ll = long long;
 using P = pair<int, int>;
-const int INF = (int)1e9;
-const ll INFL = (ll)1e15;
-const int MOD = 1e9 + 7;
-int dy[]={0, 0, 1, -1, 0};
-int dx[]={1, -1, 0, 0, 0};
+
+int mixnam(int n)
+{
+  int sum = 0;
+  while (n > 0)
+  {
+    sum += n % 10;
+    n /= 10;
+  }
+  return sum;
+}
 
 int main()
 {
-    
-    return 0;
+  int n, a, b;
+  cin >> n >> a >> b;
+  int total = 0;
+  for (int i = 1; i <= n; i++)
+  {
+    int sum = mixnam(i);
+    if (sum >= a && sum <= b)
+      total += i;
+  }
+  cout << total << endl;
+  return 0;
 }

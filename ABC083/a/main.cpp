@@ -3,14 +3,19 @@
 using namespace std;
 using ll = long long;
 using P = pair<int, int>;
-const int INF = (int)1e9;
-const ll INFL = (ll)1e15;
-const int MOD = 1e9 + 7;
-int dy[]={0, 0, 1, -1, 0};
-int dx[]={1, -1, 0, 0, 0};
 
 int main()
 {
-    
-    return 0;
+  int a, b, c, d;
+  cin >> a >> b >> c >> d;
+  int left = a + b;
+  int right = c + d;
+  if (left > right)
+    cout << "Left";
+  else if (left == right)
+    cout << "Balanced";
+  else
+    cout << "Right";
+  cout << endl;
+  return 0;
 }
