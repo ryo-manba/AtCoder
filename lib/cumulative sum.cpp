@@ -14,6 +14,29 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true
 
 // 累積和
 
+// 前処理を行う
+void pre_process(vector<int> const &a, vector<int> &S) {
+    int n = (int)a.size();
+    S.assign(n + 1, 0);
+    for (int i = 0; i < n; i++) {
+        S[i + 1] = S[i] + a[i];
+    }
+}
+
+// [i,j) の区間和を求める
+int query(int i, int j, vector<int> const &S) {
+    return S[j] - S[i];
+}
+
+int main() {
+    vector<int> a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    vector<int> S;
+    pre_process(a, S);
+    cout << query(1, 3, S) << endl;  // 2+3 = 5
+    cout << query(2, 7, S) << endl;  // 3+4+5+6+7 = 25
+    return 0;
+}
+
 int main()
 {
     int n; 
