@@ -14,10 +14,10 @@
 // 迷路の最短経路を探索
 int main()
 {
-    int r, c, sy, sx, gy, gx;
+    int H, W, sy, sx, gy, gx;   // map[H][W] スタート(sy, sx) ゴール(gy, gx)
     vector<vector<char>> maze;  // 迷路の内容を保存する配列
     vector<vector<int>> dist;   // 距離を記録しておく配列 
-    cin >> r >> c; 
+    cin >> H >> W; 
     cin >> sy >> sx;
     cin >> gy >> gx;
     sy--;   // 0始まりに直す
@@ -25,10 +25,10 @@ int main()
     gy--;
     gx--;
 
-    dist.assign(r, vector<int>(c, INF));    // 初期化
-    maze.assign(r, vector<char>(c, '.'));   // 初期化
+    dist.assign(H, vector<int>(W, INF));    // 初期化
+    maze.assign(H, vector<char>(W, '.'));   // 初期化
 
-    rep(i,r) rep(j,c) cin >> maze[i][j];
+    rep(i,H) rep(j,W) cin >> maze[i][j];
 
     queue<pair<int, int>> que;
     que.emplace(make_pair(sy, sx)); // sから探索する
@@ -46,7 +46,7 @@ int main()
             int dy[]={1, -1, 0, 0};         // dx, dy は次の探索場所への距離を表す(4方向分)
             int ny = now.first + dy[i];     // 次の探索場所の行番号
             int nx = now.second + dx[i];    // 次の探索場所の列番号
-            if (ny < 0 || r <= ny || nx < 0 || c <= nx) continue;   // 迷路の外に出るならスルー
+            if (ny < 0 || H <= ny || nx < 0 || W <= nx) continue;   // 迷路の外に出るならスルー
             if (maze[ny][nx] == '#') continue;  // 障害物があればスルー
             if (dist[ny][nx] != INF) continue;  // 探索済みならスルー
             que.push(make_pair(ny, nx));
