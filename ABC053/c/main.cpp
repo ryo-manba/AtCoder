@@ -23,7 +23,6 @@ int main()
         return 0;
     }
     
-
     ll div = x / 11;
     ll mod = x % 11;
     div *= 2;
