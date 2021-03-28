@@ -17,19 +17,24 @@ int main()
 {
     int n;
     cin >> n;
-    vector<ll> a(n);
+    vector<int> a(n);
     rep(i,n) cin >> a[i];
-    ll ans = 0;
-    for (int i = n - 1; i >= 0; i--)
+    int ans = 1<<30;
+    rep(b,1<<(n - 1))
     {
-        ll tmp = a[0];
-        for (int j = 1; j < n; j++)
+        int now = 0;
+        int orr = 0;
+        rep(i,n)
         {
-            if (i != j)
-                tmp = tmp | a[j];
+            orr |= a[i];
+            if (b>>i & 1)
+            {
+                now ^= orr;
+                orr = 0;
+            }
         }
-        ll num = a[i];
-        ans = min(ans, (tmp ^ a[i]));
+        now ^= orr;
+        chmin(ans, now);
     }
     cout << ans << endl;
     return 0;
