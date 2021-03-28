@@ -1,3 +1,4 @@
+
 //最大公約数
 ll gcd(ll a, ll b)
 {
