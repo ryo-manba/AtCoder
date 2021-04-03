@@ -3,38 +3,18 @@
 using namespace std;
 using ll = long long;
 using P = pair<int, int>;
+struct fast_ios { fast_ios(){ cin.tie(nullptr), ios::sync_with_stdio(false), cout << fixed << setprecision(20); }; } fast_ios_;
 const int INF = (int)1e9;
-const ll INFL = (ll)1e15;
+const ll INFL = (ll)1e18;
 const int MOD = 1e9 + 7;
-int dy[]={0, 0, 1, -1, 0};
-int dx[]={1, -1, 0, 0, 0};
+const double EPS = 1e-10;
+int dx[]={0, 0, -1, 1};
+int dy[]={1, -1, 0, 0};
+template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true; } return false; }
+template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true; } return false; }
 
-// 前処理を行う
-void pre_process(vector<int> const &w, vector<int> &s) {
-    int n = (int)w.size();
-    s.assign(n + 1, 0);
-    for (int i = 0; i < n; i++) {
-        s[i + 1] = s[i] + w[i];
-    }
-}
+int main()
+{
 
-// [i,j) の区間和を求める
-int query(int i, int j, vector<int> const &S) {
-    return S[j] - S[i];
-}
-
-int main() {
-    int n;
-    cin >> n;
-    vector<int> w(n);
-    rep(i,n) cin >> w[i];
-    vector<int> s;
-    int ans = INF;
-    pre_process(w, s);
-    for(int i = 1; i < n; i++)
-    {
-        ans = min(ans, abs(s[i] - (s[n] - s[i])));
-    }
-    cout << ans << endl;
     return 0;
 }
