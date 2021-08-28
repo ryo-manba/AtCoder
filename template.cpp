@@ -16,5 +16,5 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true
 int main()
 {
 
-    return 0;
+	return 0;
 }
