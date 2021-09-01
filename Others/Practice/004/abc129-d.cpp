@@ -29,9 +29,43 @@ int main()
 		{
 			if (s[i][j] == '#') continue;
 			if (done[j]) continue;
-			int
+			int l = 0;
+			while (j + l < w) // 障害物が来るまで進める
+			{
+				if (s[i][j + l] == '#') break;
+				l++;
+			}
+			rep(k,l)
+			{
+				cnt[i][j + k] += l;
+				done[j + k] = 1; // 重複して同じマスを加算しなくなる
+			}
 		}
 	}
 
+	rep(j,w)
+	{
+		vector<int> done(h);
+		rep(i,h)
+		{
+			if (s[i][j] == '#') continue;
+			if (done[i]) continue;
+			int l = 0;
+			while (i + l < h) // 障害物が来るまで進める
+			{
+				if (s[i + l][j] == '#') break;
+				l++;
+			}
+			rep(k,l)
+			{
+				cnt[i + k][j] += l;
+				done[i + k] = 1; // 重複して同じマスを加算しなくなる
+			}
+		}
+	}
+
+	int ans = 0;
+	rep(i,h) rep(j,w) chmax(ans, cnt[i][j]- 1);
+	cout << ans << endl;
 	return 0;
 }
