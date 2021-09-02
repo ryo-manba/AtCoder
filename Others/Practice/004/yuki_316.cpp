@@ -15,24 +15,23 @@ template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true
 
 int main()
 {
-	int n, a, b, c;
+	ll n, a, b, c;
 	cin >> n >> a >> b >> c;
 
-	int ans = 0;
+	ll ans = 0;
 	ans += n / a;
 	ans += n / b;
 	ans += n / c;
 
-	int	tmp1 = lcm(a, b);
-	int	tmp2 = lcm(a, c);
-	int	tmp3 = lcm(b, c);
-	int tmp4 = lcm(tmp1, c);
+	ll	lcm1 = lcm(a, b);
+	ll	lcm2 = lcm(a, c);
+	ll	lcm3 = lcm(b, c);
+	ll	lcm4 = lcm(lcm1, c);
 
-	ans -= n / tmp1;
-	ans -= n / tmp2;
-	ans -= n / tmp3;
-
-	ans += n / tmp4;
+	ans -= n / lcm1;
+	ans -= n / lcm2;
+	ans -= n / lcm3;
+	ans += n / lcm4;
 	cout << ans << endl;
 	return 0;
 }
