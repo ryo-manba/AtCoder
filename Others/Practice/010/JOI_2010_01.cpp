@@ -14,36 +14,22 @@ template<class T> inline bool chmax(T& a, T b) { if (a < b) { a = b; return true
 template<class T> inline bool chmin(T& a, T b) { if (a > b) { a = b; return true; } return false; }
 
 ll n, m;
-ll a[100010], b[100010];
+ll s[100010], a[100010];
+const int M = (int)1e5;
 
 int main()
 {
 	cin >> n >> m;
-	for (int i = 1; i < n; i++) // 右端の距離を調べる
+	for (int i = 1; i < n; i++) cin >> s[i];
+	rep(i,m) cin >> a[i];
+
+	for (int i = 1; i < n; i++)	s[i] += s[i - 1];
+	int prev = 0, ans = 0;
+	rep(i,m)
 	{
-		int x;
-		cin >> x;
-		a[i] = a[i - 1] + x;
-	}
-	ll ans = 0;
-	for (int i = 1; i <= m; i++)
-	{
-		int x;
-		cin >> x;
-		b[i] = b[i - 1] + x;
-		ans += abs(x);
-		if (b[i] < 0)
-		{
-			ll tmp = 100000 + b[i];
-			ans -= (100000 - tmp);
-			b[i] = 0;
-		}
-		if (b[i] > a[n - 1])
-		{
-			ll tmp = INFL - b[i];
-			ans -= (INFL - tmp);
-			a[i] = a[n - 1];
-		}
+		ans = (ans + abs(s[prev] - s[prev + a[i]])) % M;
+		prev += a[i];
+
 	}
 	cout << ans << endl;
 	return 0;
