@@ -2,4 +2,4 @@
   
 [AtCoder](http://atcoder.jp)  
 
-AtCoderのACしたコードを記録として載せていきます.
+AtCoderでACしたコードを記録として載せていきます.
