@@ -1,5 +1,3 @@
 ## AtCoder 記録リポジトリ
   
-[AtCoder](http://atcoder.jp)  
-
-AtCoderでACしたコードを記録として載せていきます.
+[AtCoder](http://atcoder.jp)でACしたコードを記録として載せていきます.
